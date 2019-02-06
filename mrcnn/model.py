@@ -39,6 +39,7 @@ def log(text, array=None):
     """Prints a text message. And, optionally, if a Numpy array is provided it
     prints it's shape, min, and max values.
     """
+    '''
     if array is not None:
         text = text.ljust(25)
         text += ("shape: {:20}  ".format(str(array.shape)))
@@ -47,6 +48,7 @@ def log(text, array=None):
         else:
             text += ("min: {:10}  max: {:10}".format("",""))
         text += "  {}".format(array.dtype)
+    '''
     print(text)
 
 
@@ -2170,7 +2172,7 @@ class MaskRCNN():
             if layer.output in self.keras_model.losses:
                 continue
             loss = (
-                tf.reduce_mean(layer.output, keepdims=True)
+                tf.reduce_mean(layer.output, keep_dims=True)
                 * self.config.LOSS_WEIGHTS.get(name, 1.))
             self.keras_model.add_loss(loss)
 
@@ -2194,7 +2196,7 @@ class MaskRCNN():
             layer = self.keras_model.get_layer(name)
             self.keras_model.metrics_names.append(name)
             loss = (
-                tf.reduce_mean(layer.output, keepdims=True)
+                tf.reduce_mean(layer.output, keep_dims=True)
                 * self.config.LOSS_WEIGHTS.get(name, 1.))
             self.keras_model.metrics_tensors.append(loss)
 
