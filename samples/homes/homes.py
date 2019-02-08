@@ -63,13 +63,13 @@ class HomesConfig(Config):
 
     # We use a GPU with 12GB memory, which can fit two images.
     # Adjust down if you use a smaller GPU.
-    IMAGES_PER_GPU = 1
+    IMAGES_PER_GPU = 4
 
     # Number of classes (including background)
-    NUM_CLASSES = 1 + 3  # Background + homes labels
+    NUM_CLASSES = 1 + 7  # Background + homes labels
 
     # Number of training steps per epoch
-    STEPS_PER_EPOCH = 10
+    STEPS_PER_EPOCH = 100
 
     # Skip detections with < 90% confidence
     DETECTION_MIN_CONFIDENCE = 0.9
@@ -90,6 +90,11 @@ class HomesDataset(utils.Dataset):
         self.add_class("homes", 1, "window")
         self.add_class("homes", 2, "balcony door")
         self.add_class("homes", 3, "aircon")
+        self.add_class("homes", 4, "room door")
+        self.add_class("homes", 5, "kitchen")
+        self.add_class("homes", 6, "wardrobe")
+        self.add_class("homes", 7, "home door")
+        
         
         # Train or validation dataset?
         assert subset in ["train", "val"]
