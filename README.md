@@ -1,6 +1,7 @@
 # Mask R-CNN for Object Detection and Segmentation
 
 ### [Original version](https://github.com/matterport/Mask_RCNN)
+### [Original paper](https://arxiv.org/pdf/1703.06870.pdf)
 
 ### Requirements
 Create a new conda environment and install the following libraries. Don't forget to install jupyter notebook in the new environment to map tensorflow to it. Refer to https://github.com/tensorflow/tensorflow/issues/25507 for environment issue.
