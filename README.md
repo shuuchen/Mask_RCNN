@@ -17,9 +17,12 @@ Create a new conda environment and install the following libraries. Don't forget
 
 - Following this [tutorial](https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46), I create my own dataset with [VGG Image Annotator](http://www.robots.ox.ac.uk/~vgg/software/via/via.html). The labels are encoded and exported with a json file and decoded in HomesDataset class.
 
-- Command lines for train and test
+- Train and test
 
+  Run the following cmd to train the model.
   ```
   # move to /path to Mask_RCNN/samples/homes
   python homes.py train --dataset ../../datasets/homes --weights coco
   ```
+  
+  Run the [notebook](https://github.com/shuuchen/Mask_RCNN/blob/master/samples/homes/homes_test.ipynb) to test the model on new data.
